@@ -1,8 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
-import React from 'react'
+import React, { useEffect , useState } from 'react'
 import theme from 'theme/theme'
-
 import 'styles/Fonts.css'
 import 'styles/App.css'
 import 'styles/Contact.css'
@@ -16,11 +15,15 @@ import Provider from 'streamr-client-react';
 
 function MyApp ({ Component, pageProps }: AppProps) {
 
-  const options = {
-    auth: { privateKey: "" },
-    // or authenticate with user wallet
-    // auth: { ethereum: window.ethereum }
-  };
+  const [options, setOptions] = useState({});
+
+  useEffect(() => {
+    if(window.ethereum){
+      setOptions({
+        auth: { ethereum: window.ethereum }
+      });
+    }
+  }, []);
 
   return (
     <ChakraProvider theme={theme}>
