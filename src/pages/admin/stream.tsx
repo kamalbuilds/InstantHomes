@@ -6,6 +6,7 @@ import {
     Flex,
     Spacer,
   } from "@chakra-ui/react";
+import AdminLayout from "layouts/admin";
 
 const MyComponent = () => {
 
@@ -27,14 +28,21 @@ const MyComponent = () => {
         return stream.id;
      };
 
-  const handleStreamSearch = async () => {
-    console.log(user,allowPublic,"fg");
-    const searchParams = { user, allowPublic };
-    const streams = await client.searchStreams(keyword, searchParams);
-    console.log(streams,"hi");
-    await client.destroy();
-    // setStreams(streams);
-  };
+     // search the stream
+     const handleStreamSearch = async () => {
+        console.log(user, allowPublic, "fg");
+        const searchParams = { user, allowPublic };
+        const streamIterator = client.searchStreams(keyword, searchParams);
+        const streams = [];
+        for await (const stream of streamIterator) {
+          streams.push(stream);
+        }
+        console.log(streams, "hi");
+        await client.destroy();
+        setStreams(streams);
+      };
+      
+      
 
   const handleSubmit = ( e :any) => {
     e.preventDefault();
@@ -47,6 +55,7 @@ const MyComponent = () => {
 
   return (
     <>
+    <AdminLayout>
         <Flex direction="column" justify="center" align="center" mt={8}>
         <form onSubmit={handleSubmit} style={{padding: "16px"}}>
             <FormControl id="stream-id" isRequired>
@@ -101,7 +110,7 @@ const MyComponent = () => {
             )}
         </form>
         </Flex>
-
+        </AdminLayout>
     </>
   );
 };
