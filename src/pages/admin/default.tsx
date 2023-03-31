@@ -38,8 +38,19 @@ import AdminLayout from 'layouts/admin'
 import { Image } from 'components/image/Image'
 import Usa from 'img/dashboards/usa.png'
 
+// streamr
+import { useSubscribe } from 'streamr-client-react';
+
 export default function UserReports () {
   // Chakra Color Mode
+  const streamId =
+  '0x8ed334e44265a0c89b7739cb66a8f19675a5fc7a/ultrasound.money/fees/burn-categories';
+
+  useSubscribe(streamId, {
+    onMessage: (msg) => {
+      console.log(msg.getContent());
+    },
+  });
 
   const brandColor = useColorModeValue('brand.500', 'white')
   const boxBg = useColorModeValue('secondaryGray.300', 'whiteAlpha.100')

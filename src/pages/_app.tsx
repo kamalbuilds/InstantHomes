@@ -9,9 +9,19 @@ import 'styles/Contact.css'
 
 import 'react-calendar/dist/Calendar.css'
 import 'styles/MiniCalendar.css'
-import Head from 'next/head'
+import Head from 'next/head';
+
+// streamr 
+import Provider from 'streamr-client-react';
 
 function MyApp ({ Component, pageProps }: AppProps) {
+
+  const options = {
+    auth: { privateKey: "" },
+    // or authenticate with user wallet
+    // auth: { ethereum: window.ethereum }
+  };
+
   return (
     <ChakraProvider theme={theme}>
       <Head>
@@ -20,7 +30,9 @@ function MyApp ({ Component, pageProps }: AppProps) {
         <meta name='theme-color' content='#000000' />
       </Head>
       <React.StrictMode>
-        <Component {...pageProps} />
+        <Provider {...options}>
+          <Component {...pageProps} />
+        </Provider>
       </React.StrictMode>
     </ChakraProvider>
   )

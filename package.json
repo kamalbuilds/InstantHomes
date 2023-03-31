@@ -27,6 +27,8 @@
     "react-icons": "^4.3.1",
     "react-is": "^18.0.0",
     "react-table": "^7.8.0",
+    "streamr-client": "^8.1.0",
+    "streamr-client-react": "^3.0.0-hkt.1",
     "stylis": "^4.1.1",
     "stylis-plugin-rtl": "2.0.2",
     "typescript": "^4.7.4",
@@ -41,7 +43,11 @@
     "deploy": "gh-pages -d build"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
