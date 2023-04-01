@@ -6,6 +6,9 @@ Real-estate real time price tracker application that streams real-time data on p
   <img src="https://user-images.githubusercontent.com/95926324/229267887-d6c1f90f-ed3d-4ce8-a69f-29a5f313cdab.png" alt="logo" />
 </div>
 
+https://user-images.githubusercontent.com/95926324/229296168-13451824-1e79-4b20-adba-a8c511766f62.mp4
+
+
 # How is this solving a real world problem 🤔 
 
 The Real-Estate Price Tracker aims to solve the problem of uncertainty and lack of transparency in the housing market.
@@ -22,14 +25,7 @@ Overall, the Real-Estate Price Tracker is a valuable tool for anyone who is invo
 
 https://polygonscan.com/tx/0xd6cfda2ff7650908a7900dd128001b4632bc1b36fbe5ac6feab183d59e9e29aa
 
-<br/>
-
-
-
-https://user-images.githubusercontent.com/95926324/229296168-13451824-1e79-4b20-adba-a8c511766f62.mp4
-
-
-### Quick Start on Using the repo as a Starting point
+# Quick Start on Using the repo as a Starting point
 
 There are 3 ways to do so , the easiest being using the repo as Template and then following the below steps.
 
@@ -60,3 +56,5 @@ Then run this command to start your local server
 ```bash
 yarn dev
 ```
+
+Blog to help you get started with Streamr - https://kamalthedev.hashnode.dev/how-to-use-streamr-to-send-and-receive-real-time-data
