@@ -1,3 +1,4 @@
+require('dotenv').config()
 import { useEffect, useState } from "react";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { StreamrClient } from 'streamr-client';
@@ -12,12 +13,12 @@ const Streams = () => {
 
     const [id, setId] = useState("");
     const [client,setClient] = useState(null);
-    
+
     useEffect(() => {
         if(window.ethereum){
             const client = new StreamrClient({
                 auth: {
-                ethereum: window.ethereum 
+                    ethereum : window.ethereum
                 }
             });
             setClient(client);
@@ -96,6 +97,22 @@ const Streams = () => {
         setPublishStreamId("");
         setPublishMessage("");
     };
+
+    const dmsg ={
+        mambai: 1000,
+        delhi: 500
+    }
+    // dummy data publishing 
+    async function publishEvery30Sec() {
+        try {
+          await client.publish("0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev", dmsg, { timestamp: new Date(1546300800123) });
+        } catch (error) {
+          console.error('An error occurred while publishing:', error);
+        }
+      }
+      
+      setInterval(publishEvery30Sec, 30000);
+      
 
   return (
     <>

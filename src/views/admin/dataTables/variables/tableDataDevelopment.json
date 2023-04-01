@@ -1,68 +1,56 @@
-[
-  {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "12.Jan.2021",
-    "progress": 75.5  
-  },
-  {
-    "name":"Venus DB PRO",
-    "tech": ["apple" ], 
-    "date": "21.Feb.2021",
-    "progress": 35.4  
-  },
-  {
-    "name":"Venus DS",
-    "tech": ["apple" ,"windows"], 
-    "date": "13.Mar.2021",
-    "progress": 25  
-  },
-  {
-    "name":"Venus 3D Asset",
-    "tech": ["apple","android","windows"], 
-    "date": "24.Jan.2021",
-    "progress": 100  
-  },
-  {
-    "name":"Marketplace",
-    "tech": ["apple", "windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
-  },
-  {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
-  },
-  {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "12.Jan.2021",
-    "progress": 75.5  
-  },
-  {
-    "name":"Venus DB PRO",
-    "tech": ["apple" ], 
-    "date": "21.Feb.2021",
-    "progress": 35.4  
-  },
-  {
-    "name":"Venus DS",
-    "tech": ["apple" ,"windows"], 
-    "date": "13.Mar.2021",
-    "progress": 25  
-  },
-  {
-    "name":"Venus 3D Asset",
-    "tech": ["apple","android","windows"], 
-    "date": "24.Jan.2021",
-    "progress": 100  
-  },
-  {
-    "name":"Marketplace",
-    "tech": ["apple", "windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
-  }
+[  
+  {    
+    "city": "New York",
+    "region": "Northeast",
+    "medianPrice": 850000,
+    "year": 2023   
+   },
+  
+  {    
+    "city": "Chicago",
+    "region": "Midwest",
+    "medianPrice": 400000,
+    "year": 2023   
+   },
+  
+  {    
+    "city": "Houston",
+    "region": "South",
+    "medianPrice": 300000,
+    "year": 2023   
+   },
+  
+  {    
+    "city": "Miami",
+    "region": "South",
+    "medianPrice": 600000,
+    "year": 2023   
+   },
+  
+  {    
+"    city": "SF",
+    "region": "West",
+    "medianPrice": 1200000,
+    "year": 2023   
+   },
+  {    
+    "city": "Boston",
+    "region": "Northeast",
+    "medianPrice": 900000,
+    "year": 2023   
+   },
+  
+  {    
+    "city": "Atlanta",
+    "region": "South",
+    "medianPrice": 350000,
+    "year": 2023   
+   },
+  
+  {    
+    "city": "Seattle",
+    "region": "West",
+    "medianPrice": 800000,
+    "year": 2023   
+   }
 ]

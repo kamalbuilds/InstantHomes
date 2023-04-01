@@ -7,12 +7,20 @@ type Columns = IColumnHeader[];
 
 export const columnsDataDevelopment: Columns = [
   {
-    Header: "Property",
-    accessor: "name",
+    Header: "City",
+    accessor: "city",
   },
   {
-    Header: "Value",
-    accessor: "progress",
+    Header: "Region",
+    accessor: "region",
+  },
+  {
+    Header: "medianPrice",
+    accessor: "medianPrice",
+  },
+  {
+    Header: "Year",
+    accessor: "year",
   },
 ];
 

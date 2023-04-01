@@ -41,13 +41,10 @@ export const columnsDataComplex = [
 export type ColumnData = Column[];
 
 export type TableData = Column<{
-  name: (string | boolean)[];
-  date: string;
-  progress: number;
-  quantity?: number;
-  status?: string;
-  artworks?: string;
-  rating?: number;
+  "city": string,
+  "region": string,
+  "medianPrice": number,
+  "year": number   
 }>;
 
 export type TableProps = {
