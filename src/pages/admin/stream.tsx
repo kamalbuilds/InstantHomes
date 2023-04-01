@@ -13,9 +13,9 @@ const Streams = () => {
     const [id, setId] = useState("");
     const client = new StreamrClient({
         auth: {
-            privateKey: ''
+            ethereum: window.ethereum 
         }
-});
+    });
     const [keyword, setKeyword] = useState("");
     const [user, setUser] = useState("");
     const [allowPublic, setAllowPublic] = useState(false);

@@ -30,19 +30,23 @@ export default function DataTables () {
   }
 
   useEffect(() => {
-    if(window.ethereum){
-      const client = new StreamrClient({
-        auth: {
-          ethereum: window.ethereum 
-        }
-      });
-      const subscription = client.subscribe(
-        '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev',
-        handleDevelopmentMessage
-      );
+    async function subscribeToStreamr() {
+      if(window.ethereum){
+        const client = new StreamrClient({
+          auth: {
+            ethereum: window.ethereum 
+          }
+        });
+        const subscription = await client.subscribe(
+          '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev',
+          handleDevelopmentMessage
+        );
+      }
     }
-
+    
+    subscribeToStreamr();
   }, []);
+  
 
   // streamr.subscribe('0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev', handleDevelopmentMessage);
 
