@@ -8,7 +8,7 @@ import {
 } from 'react-icons/md'
 
 // Admin Imports
-import MainDashboard from 'pages/admin/default'
+import MainDashboard from 'pages/admin/default';
 import NFTMarketplace from 'pages/admin/nft-marketplace';
 import DataTables from 'pages/admin/data-tables';
 import Streams from 'pages/admin/stream';
@@ -59,7 +59,6 @@ const routes: IRoute[] = [
       />
     ),
     component: Streams,
-    secondary: true
   }
 ]
 

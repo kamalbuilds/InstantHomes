@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import DevelopmentTable from 'views/admin/dataTables/components/DevelopmentTable'
 import CheckTable from 'views/admin/dataTables/components/CheckTable'
@@ -12,30 +12,29 @@ import React from 'react'
 import AdminLayout from 'layouts/admin'
 import { TableData } from 'views/admin/default/variables/columnsData'
 import StreamrClient from 'streamr-client';
-import { useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 
-export default function DataTables () {
+export default function DataTables() {
   const [developmentData, setDevelopmentData] = useState([]);
-  const [city,setCity] = useState();
-  const [price,setPrice] = useState();
+  const [city, setCity] = useState();
+  const [price, setPrice] = useState();
   const [data, setData] = useState([]);
 
-  const handleDevelopmentMessage = (msg : any) => {
+  const handleDevelopmentMessage = (msg: any) => {
     const { city, price } = msg;
-    setData((prevData) => [...prevData, msg]);
-    // console.log(msg,"msg");
+    setData(prevData => [...prevData, msg]);
+    console.log(data, "msg");
     // setCity(msg.city);
     // setPrice(msg.price);
-  }
+  };
 
   useEffect(() => {
     async function subscribeToStreamr() {
-      if(window.ethereum){
+      if (window.ethereum) {
         const client = new StreamrClient({
           auth: {
-            ethereum: window.ethereum 
-          }
+            ethereum: window.ethereum,
+          },
         });
         const subscription = await client.subscribe(
           '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev',
@@ -43,12 +42,13 @@ export default function DataTables () {
         );
       }
     }
-    
+
     subscribeToStreamr();
   }, []);
-  
 
-  // streamr.subscribe('0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev', handleDevelopmentMessage);
+  useEffect(() => {
+    console.log(data, "msg");
+  }, [data]);
 
   return (
     <AdminLayout>
@@ -58,7 +58,7 @@ export default function DataTables () {
           columns={{ sm: 1, md: 2 }}
           spacing={{ base: '20px', xl: '20px' }}
         >
-
+          
     <Table variant="simple">
           <Thead>
             <Tr>
@@ -69,8 +69,8 @@ export default function DataTables () {
           <Tbody>
             {data.map((msg, index) => (
               <Tr key={index}>
-                <Td>{msg.city}</Td>
-                <Td>{msg.price}</Td>
+                <Td>{msg[index].city}</Td>
+                <Td>{msg[index].price}</Td>
               </Tr>
             ))}
           </Tbody>
@@ -86,5 +86,5 @@ export default function DataTables () {
         </SimpleGrid>
       </Box>
     </AdminLayout>
-  )
+  );
 }

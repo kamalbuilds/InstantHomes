@@ -98,8 +98,8 @@ const Streams = () => {
     };
 
     const dmsg ={
-        mambai: 1000,
-        delhi: 500
+        city : "mumbai",
+        price : 1000
     }
     // dummy data publishing 
     async function publishEvery30Sec() {
