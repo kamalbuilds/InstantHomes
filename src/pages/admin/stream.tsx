@@ -99,8 +99,9 @@ const Streams = () => {
 
     const dmsg ={
         city : "mumbai",
-        price : 1000
+        price : 1000 - Math.random() *100
     }
+
     // dummy data publishing 
     async function publishEvery30Sec() {
         try {

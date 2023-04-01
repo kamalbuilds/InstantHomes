@@ -23,9 +23,9 @@ export default function DataTables() {
   const handleDevelopmentMessage = (msg: any) => {
     const { city, price } = msg;
     setData(prevData => [...prevData, msg]);
-    console.log(data, "msg");
-    // setCity(msg.city);
-    // setPrice(msg.price);
+    console.log(city, "msg");
+    setCity(msg.city);
+    setPrice(msg.price);
   };
 
   useEffect(() => {
@@ -67,12 +67,17 @@ export default function DataTables() {
             </Tr>
           </Thead>
           <Tbody>
-            {data.map((msg, index) => (
+            {/* {data.map((msg, index) => (
               <Tr key={index}>
-                <Td>{msg[index].city}</Td>
-                <Td>{msg[index].price}</Td>
+                <Td>{msg[index]?.city}</Td>
+                <Td>{msg[index]?.price}</Td>
+                <Td>{city}</Td>
               </Tr>
-            ))}
+            ))} */}
+            <Tr>
+              <Td>{city}</Td>
+              <Td>{price}</Td>
+            </Tr>
           </Tbody>
         </Table>
           <DevelopmentTable
