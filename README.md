@@ -29,12 +29,25 @@ https://polygonscan.com/tx/0xd6cfda2ff7650908a7900dd128001b4632bc1b36fbe5ac6feab
 https://user-images.githubusercontent.com/95926324/229296168-13451824-1e79-4b20-adba-a8c511766f62.mp4
 
 
-### Quick Start
+### Quick Start on Using the repo as a Starting point
 
-Clone the repository with the following command:
+There are 3 ways to do so , the easiest being using the repo as Template and then following the below steps.
+
+1> Using the Repo as template 
+
+Click on Create a new Repository.
+
+![image](https://user-images.githubusercontent.com/95926324/229308987-a3e8eeb7-4abb-40fb-955c-233823966f91.png)
+
+2> Clone the repository with the following command:
 
 ```bash
 git clone https://github.com/legendarykamal/InstantHomes.git
+```
+
+3> Fork the repo and you will have a copy of this repo.
+
+Below steps are common to the three steps.
 
 Run in terminal this command:
 
