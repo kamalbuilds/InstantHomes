@@ -44,7 +44,7 @@ import { useSubscribe } from 'streamr-client-react';
 export default function UserReports () {
   // Chakra Color Mode
   const streamId =
-  '0x8ed334e44265a0c89b7739cb66a8f19675a5fc7a/ultrasound.money/fees/burn-categories';
+  '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev';
 
   useSubscribe(streamId, {
     onMessage: (msg) => {

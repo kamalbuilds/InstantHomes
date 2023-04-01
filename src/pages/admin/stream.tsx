@@ -8,14 +8,22 @@ import {
   } from "@chakra-ui/react";
 import AdminLayout from "layouts/admin";
 
-const MyComponent = () => {
+const Streams = () => {
 
     const [id, setId] = useState("");
-    const client = new StreamrClient();
+    const client = new StreamrClient({
+        auth: {
+            privateKey: ''
+        }
+});
     const [keyword, setKeyword] = useState("");
     const [user, setUser] = useState("");
     const [allowPublic, setAllowPublic] = useState(false);
     const [streams, setStreams] = useState([]);
+
+    // publishing the stream
+    const [publishStreamId, setPublishStreamId] = useState("");
+    const [publishMessage, setPublishMessage] = useState("");
 
 
     const handleCreateStream = async (id : any) => {
@@ -44,14 +52,28 @@ const MyComponent = () => {
       
       
 
-  const handleSubmit = ( e :any) => {
-    e.preventDefault();
-    handleCreateStream(id);
-  };
-  const handleSubmitsearch = ( e :any) => {
-    e.preventDefault();
-    handleStreamSearch();
-  };
+    const handleSubmit = ( e :any) => {
+        e.preventDefault();
+        handleCreateStream(id);
+    };
+    const handleSubmitsearch = ( e :any) => {
+        e.preventDefault();
+        handleStreamSearch();
+    };
+
+    const handleSubmitPublish = async (e: any) => {
+        e.preventDefault();
+    
+        // Publish the message to the specified stream
+        const message = JSON.parse(publishMessage);
+        await client.publish(publishStreamId, message);
+
+        console.log("Message published to stream:", publishStreamId);
+    
+        // Reset the form inputs
+        setPublishStreamId("");
+        setPublishMessage("");
+    };
 
   return (
     <>
@@ -109,10 +131,33 @@ const MyComponent = () => {
             </Flex>
             )}
         </form>
+
+        <form onSubmit={handleSubmitPublish} style={{ padding: "16px" }}>
+        <FormControl id="stream-id" isRequired>
+            <FormLabel>Stream ID</FormLabel>
+            <Input
+            value={publishStreamId}
+            onChange={(event) => setPublishStreamId(event.target.value)}
+            placeholder="Enter Stream ID"
+            />
+        </FormControl>
+        <FormControl id="message" isRequired>
+            <FormLabel>Message</FormLabel>
+            <Input
+            value={publishMessage}
+            onChange={(event) => setPublishMessage(event.target.value)}
+            placeholder="Enter Message"
+            />
+        </FormControl>
+        <Button type="submit" colorScheme="blue" mt={4}>
+            Publish Message
+        </Button>
+        </form>
+
         </Flex>
         </AdminLayout>
     </>
   );
 };
 
-export default MyComponent;
+export default Streams;

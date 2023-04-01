@@ -9,8 +9,9 @@ import {
 
 // Admin Imports
 import MainDashboard from 'pages/admin/default'
-import NFTMarketplace from 'pages/admin/nft-marketplace'
-import DataTables from 'pages/admin/data-tables'
+import NFTMarketplace from 'pages/admin/nft-marketplace';
+import DataTables from 'pages/admin/data-tables';
+import Streams from 'pages/admin/stream';
 
 // Auth Imports
 import { IRoute } from 'types/navigation'
@@ -44,6 +45,21 @@ const routes: IRoute[] = [
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     path: '/data-tables',
     component: DataTables
+  },
+  {
+    name: 'Streams',
+    layout: '/admin',
+    path: '/stream',
+    icon: (
+      <Icon
+        as={MdOutlineShoppingCart}
+        width='20px'
+        height='20px'
+        color='inherit'
+      />
+    ),
+    component: Streams,
+    secondary: true
   }
 ]
 
