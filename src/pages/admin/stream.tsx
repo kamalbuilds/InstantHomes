@@ -1,4 +1,3 @@
-require('dotenv').config()
 import { useEffect, useState } from "react";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { StreamrClient } from 'streamr-client';
