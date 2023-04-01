@@ -5,7 +5,9 @@ Real-estate real time price tracker application that streams real-time data on p
 <div align="center">
   <img src="https://user-images.githubusercontent.com/95926324/229267887-d6c1f90f-ed3d-4ce8-a69f-29a5f313cdab.png" alt="logo" />
 </div>
+
 # How is this solving a real world problem 🤔 
+
 The Real-Estate Price Tracker aims to solve the problem of uncertainty and lack of transparency in the housing market.
 
 In many cases, homebuyers, sellers, and investors are not aware of the real-time value of properties, which can lead to confusion and missed opportunities.
