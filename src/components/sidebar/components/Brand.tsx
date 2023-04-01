@@ -1,8 +1,8 @@
-// Chakra imports
-import { Flex, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 
 // Custom components
 import { HSeparator } from 'components/separator/Separator';
+// import Logo from './Logo.png';
 
 export function SidebarBrand() {
 	//   Chakra color mode
@@ -10,7 +10,8 @@ export function SidebarBrand() {
 
 	return (
 		<Flex alignItems='center' flexDirection='column'>
-			<h1>InstantHomes</h1>
+			<Heading as='h1' size='xl' color='blue.500' mt='2rem'>InstantHomes</Heading>
+			{/* <img src={Logo} alt='logo' /> */}
 			<HSeparator mb='20px' />
 		</Flex>
 	);

@@ -67,13 +67,12 @@ export default function DataTables() {
             </Tr>
           </Thead>
           <Tbody>
-            {/* {data.map((msg, index) => (
+            {data.map((msg, index) => (
               <Tr key={index}>
-                <Td>{msg[index]?.city}</Td>
-                <Td>{msg[index]?.price}</Td>
-                <Td>{city}</Td>
+                <Td>{msg.city}</Td>
+                <Td>{msg.price}</Td>
               </Tr>
-            ))} */}
+            ))}
             <Tr>
               <Td>{city}</Td>
               <Td>{price}</Td>
