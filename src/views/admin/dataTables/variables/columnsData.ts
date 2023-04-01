@@ -7,19 +7,11 @@ type Columns = IColumnHeader[];
 
 export const columnsDataDevelopment: Columns = [
   {
-    Header: "NAME",
+    Header: "Property",
     accessor: "name",
   },
   {
-    Header: "TECH",
-    accessor: "tech",
-  },
-  {
-    Header: "DATE",
-    accessor: "date",
-  },
-  {
-    Header: "PROGRESS",
+    Header: "Value",
     accessor: "progress",
   },
 ];

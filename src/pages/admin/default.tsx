@@ -43,12 +43,11 @@ import { useSubscribe } from 'streamr-client-react';
 
 export default function UserReports () {
   // Chakra Color Mode
-  const streamId =
-  '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev';
+  const streamId = '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev';
 
   useSubscribe(streamId, {
     onMessage: (msg) => {
-      console.log(msg.getContent());
+      console.log(msg.getContent(),"RETRIEVING");
     },
   });
 

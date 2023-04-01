@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import DevelopmentTable from 'views/admin/dataTables/components/DevelopmentTable'
 import CheckTable from 'views/admin/dataTables/components/CheckTable'
@@ -16,8 +17,35 @@ import tableDataComplex from 'views/admin/dataTables/variables/tableDataComplex.
 import React from 'react'
 import AdminLayout from 'layouts/admin'
 import { TableData } from 'views/admin/default/variables/columnsData'
+import StreamrClient from 'streamr-client';
+import { useEffect } from 'react';
+
 
 export default function DataTables () {
+  const [developmentData, setDevelopmentData] = useState([]);
+
+  const handleDevelopmentMessage = (msg : any) => {
+    setDevelopmentData(msg);
+    console.log(msg,"msg");
+  }
+
+  useEffect(() => {
+    if(window.ethereum){
+      const client = new StreamrClient({
+        auth: {
+          ethereum: window.ethereum 
+        }
+      });
+      const subscription = client.subscribe(
+        '0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev',
+        handleDevelopmentMessage
+      );
+    }
+
+  }, []);
+
+  // streamr.subscribe('0x0439427c42a099e7e362d86e2bbe1ea27300f6cb/kamalthedev', handleDevelopmentMessage);
+
   return (
     <AdminLayout>
       <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
@@ -28,7 +56,7 @@ export default function DataTables () {
         >
           <DevelopmentTable
             columnsData={columnsDataDevelopment}
-            tableData={(tableDataDevelopment as unknown) as TableData[]}
+            tableData={developmentData}
           />
           <CheckTable
             columnsData={columnsDataCheck}
