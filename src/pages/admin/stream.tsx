@@ -12,16 +12,17 @@ const Streams = () => {
 
     const [id, setId] = useState("");
     const [client,setClient] = useState(null);
-
-    if (typeof window !== "undefined" && window.ethereum) {
-        const client = new StreamrClient({
-          auth: {
-            ethereum: window.ethereum 
-          }
-        });
-
-        setClient(client);
-    }
+    
+    useEffect(() => {
+        if(window.ethereum){
+            const client = new StreamrClient({
+                auth: {
+                ethereum: window.ethereum 
+                }
+            });
+            setClient(client);
+        }
+    }, []);
       
     const [keyword, setKeyword] = useState("");
     const [user, setUser] = useState("");
