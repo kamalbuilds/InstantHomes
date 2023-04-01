@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { StreamrClient } from 'streamr-client';
 import {
@@ -11,11 +11,18 @@ import AdminLayout from "layouts/admin";
 const Streams = () => {
 
     const [id, setId] = useState("");
-    const client = new StreamrClient({
-        auth: {
+    const [client,setClient] = useState(null);
+
+    if (typeof window !== "undefined" && window.ethereum) {
+        const client = new StreamrClient({
+          auth: {
             ethereum: window.ethereum 
-        }
-    });
+          }
+        });
+
+        setClient(client);
+    }
+      
     const [keyword, setKeyword] = useState("");
     const [user, setUser] = useState("");
     const [allowPublic, setAllowPublic] = useState(false);
@@ -24,6 +31,20 @@ const Streams = () => {
     // publishing the stream
     const [publishStreamId, setPublishStreamId] = useState("");
     const [publishMessage, setPublishMessage] = useState("");
+
+    // Define the interval time in milliseconds
+    
+    useEffect(() => {
+        // Define the interval time in milliseconds
+        const intervalTime = 20000;
+      
+        // Call the handleSubmitPublish function every 20 seconds
+        const intervalId = setInterval(handleSubmitPublish, intervalTime);
+      
+        // Return a cleanup function to clear the interval when the component unmounts
+        return () => clearInterval(intervalId);
+      }, []);
+      
 
 
     const handleCreateStream = async (id : any) => {
