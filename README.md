@@ -56,5 +56,12 @@ Then run this command to start your local server
 ```bash
 yarn dev
 ```
+## Some examples of how developers can leverage the real-time price data from the real-estate dapp to create innovative and value-added applications for the real-estate industry.
+
+1. A smart contract platform that enables buyers and sellers to execute contracts without intermediaries, using the real-time price data as a reference for fair market value.
+
+2. A tokenization platform that allows property owners to issue tokens representing fractional ownership of their properties, and investors to trade them on a secondary market, using the real-time price data as a basis for valuation.
+
+3. A prediction market platform that allows users to bet on the future price movements of properties, using the real-time price data as an input for the market mechanism.
 
 Blog to help you get started with Streamr - https://kamalthedev.hashnode.dev/how-to-use-streamr-to-send-and-receive-real-time-data
